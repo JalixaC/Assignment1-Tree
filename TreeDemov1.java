@@ -75,11 +75,20 @@ class Node{
 
 	   
 	   
-	   /*
-	   in-order traversal
+	   /**
+	   goes through the tree in-order traversal; left, root, right
+	   @param root node is used to search the tree
 	   */
 	   public void inOrderTraversal(Node root){
-	      //implement in here
+	      if(root == null) {
+	    	  return; 
+	      }
+	      
+	      inOrderTraversal(root.left); //recursively goes through the left side then prints everything out
+	      
+	      System.out.println(root.value + " ");
+	      
+	      inOrderTraversal(root.right); //then goes into the right
 	   }
 	   
 	   
