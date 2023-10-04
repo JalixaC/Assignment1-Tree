@@ -1,3 +1,5 @@
+package tree;
+
 class Node{
 	   int value;
 	   Node left, right;
@@ -53,13 +55,22 @@ class Node{
 	      }//closing main if-else 
 	   }
 	   
-	   /*
-	   pre-order traversal
-	   Prints the value of every node preorder
+	   /**
+	   prints the nodes in pre-order; root, left, right
+	   @param Node root is used to reach the rest of the tree
+	   
 	   */
 	   public void preOrderTraversal(Node root){
-		//implement in here
-		   
+		   if(root == null) {
+			   return;
+		}
+		
+		System.out.println(root.value + " "); 
+		
+		preOrderTraversal(root.left); //recursively keeps printing left until there are no more left
+	   
+		preOrderTraversal(root.right); //then goes to the right subtree 
+		
 	   }
 
 	   
@@ -154,7 +165,7 @@ class Node{
 
 
 
-	public class TreeDemo{
+	public class TreeDemov1{
 	   public static void main(String[] args){
 	      BinarySearchTree t1  = new BinarySearchTree();
 	      t1.insert( 24);
