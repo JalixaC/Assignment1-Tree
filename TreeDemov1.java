@@ -82,7 +82,7 @@ class Node{
 	   public void inOrderTraversal(Node root){
 	      if(root == null) {
 	    	  return; 
-	      }
+	        }
 	      
 	      inOrderTraversal(root.left); //recursively goes through the left side then prints everything out
 	      
@@ -93,12 +93,20 @@ class Node{
 	   
 	   
 	   
-	   /*
-	   post-order traversal
+	   /**
+	   post-order traversal, prints left, right and lastly the root
+	   @param root node which is used to search the tree
 	   */
 	  
 	   public void postOrderTraversal(Node root){
-         //implement in here
+		 if(root == null){
+		         return;
+		   }
+		 postOrderTraversal(root.left); //recursively into left subtree
+		      
+		 postOrderTraversal(root.right); //recursively into right subtree 
+		      
+		 System.out.print(root.value + " "); //lastly prints the value 
 		   
 	   }
 	   
