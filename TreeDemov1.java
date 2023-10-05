@@ -136,13 +136,24 @@ class Node{
 	   
 	   
 	   
-	   /*
-	   a method to find the node in the tree
-	   with a smallest key
+	   /**
+	   a method to find the node in the tree with the 
+	   smallest value
+	   @param the root of to search the tree
+	   @return the smallest node in the tree
 	   */
 	   public int getMin(Node root){
-         //implement in here
-	      
+         if(root == null) {
+        	 return -1;
+         }
+	      while(root.left != null) { //if no leaf node has been reached, keeps going
+	    	  if(root.left.value < root.value) { 
+	    		  root = root.left; //keeps going left to find the smallest
+	    	  }else {
+	    		  root = root.right; //goes right if root is not less than current root value
+	    	  }
+	      }
+	      return root.value; //returns the smallest node value
 	   }
 	  
 	  
