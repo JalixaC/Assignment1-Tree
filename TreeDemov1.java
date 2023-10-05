@@ -158,12 +158,19 @@ class Node{
 	  
 	  
 	  
-	   /*
+	   /**
 	   a method to find the node in the tree
-	   with a largest key
+	   with a largest node value
+	   @param root of the tree 
+	   @return the max node value
 	   */
 	   public int getMax(Node root){
-         //implement in here
+		   Node temp = root; //using temp node to loop though the rightest node 
+		   
+         while(temp.right != null) { //if leaf node hasn't been reached keeps going right
+        	 temp = temp.right; 
+         }
+         return temp.value; //returns max node once it leaves while loop
 	   }
 	   
 	   
